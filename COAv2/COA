@@ -1,0 +1,218 @@
+--[[
+
+
+
+
+
+]]
+--ui
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
+--↓北京时间
+local LBLG = Instance.new("ScreenGui", getParent)
+local LBL = Instance.new("TextLabel", getParent)
+local player = game.Players.LocalPlayer
+
+LBLG.Name = "LBLG"
+LBLG.Parent = game.CoreGui
+LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LBLG.Enabled = true
+LBL.Name = "LBL"
+LBL.Parent = LBLG
+LBL.BackgroundColor3 = Color3.new(1, 1, 1)
+LBL.BackgroundTransparency = 1
+LBL.BorderColor3 = Color3.new(0, 0, 0)
+LBL.Position = UDim2.new(0.75,0,0.010,0)
+LBL.Size = UDim2.new(0, 133, 0, 30)
+LBL.Font = Enum.Font.GothamSemibold
+LBL.Text = "TextLabel"
+LBL.TextColor3 = Color3.new(1, 1, 1)
+LBL.TextScaled = true
+LBL.TextSize = 14
+LBL.TextWrapped = true
+LBL.Visible = true
+
+local FpsLabel = LBL
+local Heartbeat = game:GetService("RunService").Heartbeat
+local LastIteration, Start
+local FrameUpdateTable = { }
+
+local function HeartbeatUpdate()
+	LastIteration = tick()
+	for Index = #FrameUpdateTable, 1, -1 do
+		FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
+	end
+	FrameUpdateTable[1] = LastIteration
+	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
+	CurrentFPS = CurrentFPS - CurrentFPS % 1
+	FpsLabel.Text = ("北京时间:"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S"))
+end
+Start = tick()
+Heartbeat:Connect(HeartbeatUpdate)
+
+--[[
+点击选项
+Tab1:AddButton({"Darker Theme", function()
+  redzlib:SetTheme("Darker")
+end})
+
+  左侧大项目参考
+local Tabs = {
+  TONGYONG = Window:MakeTab({"通用", "Home"}),
+}
+
+  多项目参考
+  local Dropdown = Tab2:AddDropdown({
+  Name = "Players List",
+  Description = "Select a random Number",
+  Options = {"One", "Two", "Three", "Four", "Five"},
+  Default = {"Two", "Four"},
+  Flag = "Dropdown Teste 2",
+  MultiSelect = true
+]]
+--简介图标
+local Window = redzlib:MakeWindow({"COA脚本2.0.0.0 : 通用脚本", "ui作者 redz9999 作者 pop cat kun COA脚本交流群952815628 更新时间 2024年9月15日", "testando-redzLibv5.json"})
+Window:AddMinimizeButton({
+  Button = { Image = redzlib:GetIcon("Apple"), BackgroundTransparency = 0 },
+  Corner = { CornerRadius = UDim.new(0, 6) }
+})
+
+--左侧项目
+local Tab1 = Window:MakeTab({"白脚本", "Locate"})
+local Tab2 =  Window:MakeTab({"通用", "Home"})
+local Tab3 = Window:MakeTab({"关于作者", "Locate"})
+ --[[
+ 
+ 
+]]
+
+Tab2:AddButton({"复制作者QQ", function()
+    setclipboard("2293290377")  
+end})
+
+Tab2:AddButton({"复制QQ群", function()
+    setclipboard("952815628")
+end})
+
+Tab1:AddButton({"白脚本", function()
+  _G.qq="1790789616"loadstring(game:HttpGet(('https://raw.githubusercontent.com/wev666666/baijiaobengV2.0beta/main/%E7%99%BD%E8%84%9A%E6%9C%ACbeta'),true))()
+end})
+
+Tab2:AddSection("主要功能")
+
+Tab2:AddButton({"FPS显示", function()
+-- Gui to Lua 
+-- Version: 3.2 
+-- 翻译：pop cat kun
+  
+-- Instances:
+ local ScreenGui = Instance.new("ScreenGui") 
+ local FpsLabel = Instance.new("TextLabel")
+ 
+--Properties:
+ 
+ ScreenGui.Name = "FPSGui" 
+ ScreenGui.ResetOnSpawn = false 
+ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling 
+ 
+ FpsLabel.Name = "FPSLabel" 
+ FpsLabel.Size = UDim2.new(0, 100, 0, 50) 
+ FpsLabel.Position = UDim2.new(0, 10, 0, 10) 
+ FpsLabel.BackgroundTransparency = 1 
+ FpsLabel.Font = Enum.Font.SourceSansBold 
+ FpsLabel.Text = "帧率: 0" 
+ FpsLabel.TextSize = 20 
+ FpsLabel.TextColor3 = Color3.new(1, 1, 1) 
+ FpsLabel.Parent = ScreenGui 
+  
+ function updateFpsLabel() 
+     local fps = math.floor(1 / game:GetService("RunService").RenderStepped:Wait()) 
+     FpsLabel.Text = "帧率: " .. fps 
+  end 
+  
+  game:GetService("RunService").RenderStepped:Connect(updateFpsLabel) 
+  
+ ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ 
+ 
+animateCredits()
+end})
+
+Tab2:AddButton({"反挂机V2", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()
+end})
+
+local TextBox = Tab2:AddTextBox({
+     Name = "速度设置",
+     Description = "速度",
+     PlaceholderText = "点击输入",
+     Callback = function(Value)
+      game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end
+})
+
+local TextBox = Tab2:AddTextBox({
+     Name = "跳跃高度设置",
+     Description = "跳跃",
+     PlaceholderText = "点击输入",
+     Callback = function(Value)
+      game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end
+})
+
+local TextBox = Tab2:AddTextBox({
+     Name = "重力设置",
+     Description = "重力",
+     PlaceholderText = "点击输入",
+     Callback = function(Value)
+      game.Workspace.Gravity = Value
+    end
+})
+
+Tab2:AddButton({"范围设置（中文）", function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv1.5/main/By.pop.cat.kun/pop.cat.kun%E7%BF%BB%E8%AF%91%E7%A2%B0%E6%92%9E%E7%AE%B1%E8%AE%BE%E7%BD%AE"))()
+end})
+
+Tab2:AddButton({"建筑工具", function()
+     Copy = Instance.new("HopperBin")
+     Copy.Name = "Copy"
+     Copy.BinType = 3
+     Copy.Parent = game.Players.LocalPlayer.Backpack
+     Delete = Instance.new("HopperBin")
+     Delete.Name = "Delete"
+     Delete.BinType = 4
+     Delete.Parent = game.Players.LocalPlayer.Backpack
+end})
+
+Tab2:AddSection("飞行")
+
+Tab2:AddButton({"飞行V3（隐藏）", function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv1.5.3/main/By.pop.cat.kun/COA%E9%A3%9E%E8%A1%8C"))()
+end})
+
+Tab2:AddButton({"飞行V3", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/gqv7PXAa"))()  
+end})
+
+Tab2:AddButton({"踏空", function()
+     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+end})
+
+Tab2:AddButton({"铁拳", function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'))()    
+ end})
+
+Tab2:AddButton({"飞车(中文)", function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv1.5/main/By.pop.cat.kun/pop%2Ccat%2Ckun%E7%BF%BB%E8%AF%91%E7%9A%84%E9%A3%9E%E8%BD%A6"))()
+end})
+
+Tab2:AddButton({"点击传送工具", function()
+      mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "点击传送" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack
+end})
+
+Tab2:AddToggle({"夜视", function()
+		if Value then
+		    game.Lighting.Ambient = Color3.new(1, 1, 1)
+		else
+		    game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+   end})
