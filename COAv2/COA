@@ -70,7 +70,7 @@ local Tabs = {
   MultiSelect = true
 ]]
 --简介图标
-local Window = redzlib:MakeWindow({"COA脚本2.0.0.0 : 通用脚本", "ui作者 redz9999 作者 pop cat kun COA脚本交流群952815628 更新时间 2024年9月15日", "testando-redzLibv5.json"})
+local Window = redzlib:MakeWindow({"COA脚本2.0.0.3 : 通用脚本", "ui作者 redz9999 作者 pop cat kun COA脚本交流群952815628 更新时间 2024年9月15日", "testando-redzLibv5.json"})
 Window:AddMinimizeButton({
   Button = { Image = redzlib:GetIcon("Apple"), BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0, 6) }
