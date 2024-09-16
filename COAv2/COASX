@@ -2,6 +2,14 @@
 --通用脚本
 loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv2/main/COAv2/COA"))()
 
---meme sea
-if game.PlaceId == 1726359697033 then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAJIAOBEN/main/By.pop.cat.kun/Meme_Sea%E7%BF%BB%E8%AF%91_pop.cat.kun.txt"))()
+
+
+
+
+local gameId = game.PlaceId
+local MemeSeaGameId = 1726359697033
+if gameid == MemeSeaGameId then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAJIAOBEN/main/By.pop.cat.kun/Meme_Sea%E7%BF%BB%E8%AF%91_pop.cat.kun.txt"))()
+else
+warn("Sorry this game not supported. try to join supported games. More in discord.")
+end
