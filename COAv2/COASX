@@ -8,6 +8,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv2/main/
 
 local gameId = game.PlaceId
 local MemeSeaGameId = 1726359697033
+local LLCQGmaeId = 1727356109909
+if gameid ==  LLCQGameId = then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/llz162652/COAv2/refs/heads/main/COAv2/%E5%8A%9B%E9%87%8F%E4%BC%A0%E5%A5%87COA'))()
+else
 if gameid == MemeSeaGameId then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAJIAOBEN/main/By.pop.cat.kun/Meme_Sea%E7%BF%BB%E8%AF%91_pop.cat.kun.txt"))()
 else
