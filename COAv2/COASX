@@ -15,7 +15,7 @@ if gameid == PisaDianGameId then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv2/refs/heads/main/COAv2/%E5%9C%A8%E6%8A%AB%E8%90%A8%E5%BA%97%E5%B7%A5%E4%BD%9C"))()
 else
 if gameid == FamuDahengGameId then
-    https://raw.githubusercontent.com/llz162652/COAJIAOBEN/refs/heads/main/By.pop.cat.kun/COA%E4%BC%90%E6%9C%A8%E5%A4%A7%E4%BA%A82
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAJIAOBEN/refs/heads/main/By.pop.cat.kun/COA%E4%BC%90%E6%9C%A8%E5%A4%A7%E4%BA%A8"))()
 else
 if gameid ==  LLCQGameId = then
     loadstring(game:HttpGet('https://raw.githubusercontent.com/llz162652/COAv2/refs/heads/main/COAv2/%E5%8A%9B%E9%87%8F%E4%BC%A0%E5%A5%87COA'))()
