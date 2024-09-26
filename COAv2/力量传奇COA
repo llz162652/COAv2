@@ -45,10 +45,10 @@ TY:AddButton({"飞行V3（隐藏）", function()
      loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv1.5.3/main/By.pop.cat.kun/COA%E9%A3%9E%E8%A1%8C"))()
 end})
 
-LLCQ:AddToggle({"自动比赛开关", function()
+LLCQ:AddToggle({"自动比赛开关",false, function()
   while AR do wait() wait(2) game:GetService("ReplicatedStorage").rEvents.brawlEvent:FireServer("joinBrawl") end
 end})
-LLCQ:AddToggle({"自动举哑铃", function()
+LLCQ:AddToggle({"自动举哑铃",false, function()
   local part = Instance.new('Part', workspace) part.Size = Vector3.new(500, 20, 530.1) part.Position = Vector3.new(0, 100000, 133.15) part.CanCollide = true part.Anchored = true local rs = game:GetService("RunService").RenderStepped while ATYL do wait() game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame + Vector3.new(0, 50, 0) for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do if v.ClassName == "Tool" and v.Name == "Weight" then v.Parent = game.Players.LocalPlayer.Character end end game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep") end
 end})
 LLCQ:AddToggle({"自动俯卧撑", function()
