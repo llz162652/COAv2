@@ -1,5 +1,5 @@
 --指定游戏脚本
---通用脚本
+--通用脚本↓
 loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv2/main/COAv2/COA"))()
 
 
@@ -7,9 +7,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv2/main/
 
 
 local gameId = game.PlaceId
+local PisaDianGameId = 1727358919315
 local FamuDahengGameId = 1727356380538
 local MemeSeaGameId = 1726359697033
 local LLCQGmaeId = 1727356109909
+if gameid == PisaDianGameId then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/llz162652/COAv2/refs/heads/main/COAv2/%E5%9C%A8%E6%8A%AB%E8%90%A8%E5%BA%97%E5%B7%A5%E4%BD%9C"))()
+else
 if gameid == FamuDahengGameId then
     https://raw.githubusercontent.com/llz162652/COAJIAOBEN/refs/heads/main/By.pop.cat.kun/COA%E4%BC%90%E6%9C%A8%E5%A4%A7%E4%BA%A82
 else
