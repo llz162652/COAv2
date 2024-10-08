@@ -1,3 +1,4 @@
+--COA1.6.0.0
 --[[
 
 
@@ -5,7 +6,7 @@
 
 
 ]]
---ui
+--ui作者
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
 --↓北京时间
 local LBLG = Instance.new("ScreenGui", getParent)
@@ -70,7 +71,7 @@ local Tabs = {
   MultiSelect = true
 ]]
 --简介图标
-local Window = redzlib:MakeWindow({"COA脚本2.0.0.3 : 通用脚本", "ui作者 redz9999 作者 pop cat kun COA脚本交流群952815628 更新时间 2024年9月15日", "testando-redzLibv5.json"})
+local Window = redzlib:MakeWindow({"COA脚本1.6.0.0 : 通用", "ui作者 redz9999 作者 pop cat kun 更新时间 2024年9月14日", "testando-redzLibv5.json"})
 Window:AddMinimizeButton({
   Button = { Image = redzlib:GetIcon("Apple"), BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0, 6) }
@@ -209,7 +210,7 @@ Tab2:AddButton({"点击传送工具", function()
       mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "点击传送" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack
 end})
 
-Tab2:AddToggle({"夜视", function()
+Tab2:AddToggle({"夜视", false, function(Value)
 		if Value then
 		    game.Lighting.Ambient = Color3.new(1, 1, 1)
 		else
